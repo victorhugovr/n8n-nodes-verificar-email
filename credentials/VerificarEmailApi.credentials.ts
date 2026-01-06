@@ -21,8 +21,15 @@ export class VerificarEmailApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			qs: {
-				'api_key': '={{$credentials.apiKey}}',
+				api_key: '={{$credentials.apiKey}}',
 			},
+		},
+	};
+	// @ts-expect-error -- required by n8n credential test typing
+	test = {
+		request: {
+			method: 'GET',
+			url: 'https://api.emailable.com/v1/verify?email=example@example.com',
 		},
 	};
 }

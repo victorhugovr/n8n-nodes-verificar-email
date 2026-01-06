@@ -1,19 +1,19 @@
 {
 	"name": "n8n-nodes-verificaremail",
 	"version": "0.1.0",
-	"description": "",
+	"description": "n8n node to verify email addresses using the Verificar API",
 	"license": "MIT",
 	"homepage": "",
 	"keywords": [
 		"n8n-community-node-package"
 	],
 	"author": {
-		"name": "",
-		"email": ""
+		"name": "Victor Hugo",
+		"email": "victorhvr.net@gmail.com"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/<...>/n8n-nodes-<...>.git"
+		"url": "https://github.com/victorhugovg/n8n-nodes-verificar-email.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -31,7 +31,7 @@
 		"n8nNodesApiVersion": 1,
 		"strict": true,
 		"credentials": [
-			"dist/credentials/VerificarApi.credentials.js"
+			"dist/credentials/VerificarEmailApi.credentials.js"
 		],
 		"nodes": [
 			"dist/nodes/VerificarEmail/VerificarEmail.node.js"

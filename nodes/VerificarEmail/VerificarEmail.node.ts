@@ -18,6 +18,7 @@ export class VerificarEmail implements INodeType {
 		defaults: {
 			name: 'Verificar Email',
 		},
+		usableAsTool: true,
 		inputs: ['main'],
 		outputs: ['main'],
 		credentials: [
@@ -40,11 +41,11 @@ export class VerificarEmail implements INodeType {
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
 		const items = this.getInputData();
-		const returnData: Array<{json: IDataObject}> = [];
+		const returnData: Array<{ json: IDataObject }> = [];
 
-		for (let i : number = 0; i < items.length;i++) {
+		for (let i: number = 0; i < items.length; i++) {
 			const email: string = this.getNodeParameter('email', i) as string;
-			const credentials = await this.getCredentials('verificarEmailApi')
+			const credentials = await this.getCredentials('verificarEmailApi');
 			const apiKey = credentials?.apiKey;
 
 			const response = await this.helpers.httpRequest({
@@ -52,29 +53,25 @@ export class VerificarEmail implements INodeType {
 				url: 'https://api.emailable.com/v1/verify',
 				qs: {
 					email: email,
-					api_key: apiKey
+					api_key: apiKey,
 				},
 				headers: {
 					Accept: 'application/json',
 				},
-				json: true
+				json: true,
 			});
 
-			const results = Array.isArray(response) ? response : [response]
-			for (const result of results){
+			const results = Array.isArray(response) ? response : [response];
+			for (const result of results) {
 				returnData.push({
-
 					json: {
 						email: result.email,
-						score: result.score
-					}
-				})
+						score: result.score,
+					},
+				});
 			}
-
-
 		}
 
 		return this.prepareOutputData(returnData);
 	}
-
 }
