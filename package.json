@@ -13,7 +13,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/victorhugovg/n8n-nodes-verificar-email.git"
+		"url": "https://github.com/victorhugovg/n8n-nodes-verificaremail.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
