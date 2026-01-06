@@ -1,5 +1,5 @@
 {
-	"name": "n8n-nodes-verificaremail",
+	"name": "n8n-nodes-verificar-el-email",
 	"version": "0.1.0",
 	"description": "n8n node to verify email addresses using the Verificar API",
 	"license": "MIT",
@@ -13,7 +13,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/victorhugovr/n8n-nodes-verificaremail.git",
+		"url": "https://github.com/victorhugovr/n8n-nodes-verificar-email.git",
 		"version": "0.1.1"
 	},
 	"scripts": {
